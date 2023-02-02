@@ -195,6 +195,7 @@ public class AttributionDialogManager implements View.OnClickListener, DialogInt
     try {
       Intent intent = new Intent(Intent.ACTION_VIEW);
       intent.setData(Uri.parse(url));
+      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
       context.startActivity(intent);
     } catch (ActivityNotFoundException exception) {
       // explicitly handling if the device hasn't have a web browser installed. #8899
